@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+	<category>
+	    <pattern>Test finito</pattern>
+	    <template>
+	        Complimenti hai completato il test!
+	        <br/>Hai ottenuto un punteggio di <get name="voto" />/10
+	    </template>
+	</category>
+</aiml>
