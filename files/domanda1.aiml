@@ -20,7 +20,7 @@
             <br/>Sei pronto?
             <reply>
                 <text>Certo!!</text>
-                <think><set name="voto">1</set></think>
+                <think><set name="voto">10</set></think>
                 <think><set name="errori">0</set></think>
                 <postback>Domanda 1</postback>
             </reply>
@@ -92,7 +92,7 @@
             <condition name="pozione">
                 <li value="Polisucco">
                     Bravo! Hai selezionato <set name="answ1"><star /></set>
-                    <think><set name="voto"><srai>XADD <get name="voto" /> XS 3</srai></set></think>
+                    <think><set name="voto"><srai>XADD <get name="voto" /> XS 30</srai></set></think>
                     <reply>
 
                         <text>Prossima domanda</text>
@@ -101,7 +101,7 @@
                 </li>
                 <li>
                     Sbagliato! Hai selezionato <set name="answ1"><star /></set>
-                    <think><set name="errori"><srai>XADD <get name="errori" /> XS 1</srai></set></think>
+                    <think><set name="errori"><srai>XADD <get name="errori" /> XS 10</srai></set></think>
                     <reply>
                         <text>Riprova</text>
                         <postback>Domanda 1</postback>
@@ -117,7 +117,7 @@
             <condition name="pozione">
                 <li value="Felix Felicis">
                     Bravo! Hai selezionato <set name="answ1"><star /></set>
-                    <think><set name="voto"><srai>XADD <get name="voto" /> XS 3</srai></set></think>
+                    <think><set name="voto"><srai>XADD <get name="voto" /> XS 30</srai></set></think>
                     <reply>
                         <text>Prossima domanda</text>
                         <postback>Test finito</postback>
@@ -125,7 +125,7 @@
                 </li>
                 <li>
                     Sbagliato! Hai selezionato <set name="answ1"><star /></set>
-                    <think><set name="errori"><srai>XADD <get name="errori" /> XS 1</srai></set></think>
+                    <think><set name="errori"><srai>XADD <get name="errori" /> XS 10</srai></set></think>
                     <reply>
                         <text>Riprova</text>
                         <postback>Domanda 1</postback>
@@ -141,7 +141,7 @@
             <condition name="pozione">
                 <li value="Veritaserum">
                     Bravo! Hai selezionato <set name="answ1"><star /></set>
-                    <think><set name="voto"><srai>XADD <get name="voto" /> XS 3</srai></set></think>
+                    <think><set name="voto"><srai>XADD <get name="voto" /> XS 30</srai></set></think>
                     <reply>
                         <text>Prossima domanda</text>
                         <postback>Test finito</postback>
@@ -149,7 +149,7 @@
                 </li>
                 <li>
                     Sbagliato! Hai selezionato <set name="answ1"><star /></set>
-                    <think><set name="errori"><srai>XADD <get name="errori" /> XS 1</srai></set></think>
+                    <think><set name="errori"><srai>XADD <get name="errori" /> XS 10</srai></set></think>
                     <reply>
                         <text>Riprova</text>
                         <postback>Domanda 1</postback>
@@ -163,7 +163,7 @@
         <pattern>Domanda 1 *</pattern>
         <template>
             Sbagliato! Hai selezionato <set name="answ1"><star /></set>
-            <think><set name="errori"><srai>XADD <get name="errori" /> XS 1</srai></set></think>
+            <think><set name="errori"><srai>XADD <get name="errori" /> XS 10</srai></set></think>
             <reply>
                 <text>Riprova</text>
                 <postback>Domanda 1</postback>
