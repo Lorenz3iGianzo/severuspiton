@@ -1,4 +1,149 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml version="2.0">
-	<!-- insert your AIML categories here -->
+	<category>
+        <pattern>Domanda 2</pattern>
+        <template>
+            Prossima domanda...
+            Dimmi gli ingredienti della pozione   
+            <random>
+                <li> <set name="pozione">Invecchiante</set></li>
+                <li> <set name="pozione">Bella Pelle</set></li>
+                <li> <set name="pozione">Amortensia</set></li>
+            </random>
+            !
+            <br/>
+            <reply>
+                <text>
+                    <set name="ingr21">
+                        <random>
+                            <li>Corno di Bicorno in polvere</li>,
+                            <li>Radici di Tranello del diavolo</li>,
+                            <li>Succo di zucca</li>,
+                            <li>Un capello di Troll</li>,
+                            <li>Un pizzico di pepe rosa e verde</li>,
+                            <li>Gocce di assenzio</li>,
+                            <li>Fiore di Loto</li>
+                        </random>
+                    </set>
+                </text>
+                <postback>Domanda 2 <get name="ingr21" /></postback>
+            </reply>
+            <reply>
+                <text>
+                    <set name="ingr22">
+                        <random>
+                            <li>Ortiche secche</li>
+                            <li>Zanne di serpente</li>
+                            <li>Gusci di lumache cornute</li>
+                            <li>Aculeo di porcospino</li>
+                        </random>
+                    </set>
+                </text>
+                <postback>Domanda 2 <get name="ingr22" /></postback>
+            </reply>
+            <reply>
+                <text>
+                    <set name="ingr23">
+                        <random>
+                            <li>Petali di rosa</li>
+                            <li>Ali di fata</li>
+                            <li>Capelli di Veela</li>
+                            <li>Lacrime di Sirena</li>
+                            <li>Acqua di sorgente</li>
+                            <li>Coriandolo</li>
+                            <li>Fico secco d'Abissinia</li>
+                            <li>Parte di chi ci si deve innamorare</li>
+                        </random>
+                    </set>
+                </text>
+                <postback>Domanda 2 <get name="ingr2" /></postback>
+            </reply>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>Domanda 2 <set>invecchiante</set></pattern>
+        <template>
+            <condition name="pozione">
+                <li value="Invecchiante">
+                    Bravo! Hai selezionato <set name="answ1"><star /></set>
+                    <think><set name="voto"><srai>XADD <get name="voto" /> XS 3</srai></set></think>
+                    <reply>
+
+                        <text>Prossima domanda</text>
+                        <postback>Domanda 3</postback>
+                    </reply>
+                </li>
+                <li>
+                    Sbagliato! Hai selezionato <set name="answ1"><star /></set>
+                    <think><set name="voto"><srai>XSUB <get name="voto" /> XS 1</srai></set></think>
+                    <reply>
+                    <text>Riprova</text>
+                    <postback>Domanda 2</postback>
+            </reply>
+                </li>
+            </condition>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>Domanda 2 <set>bellapelle</set></pattern>
+        <template>
+            <condition name="pozione">
+                <li value="Bella Pelle">
+                    Bravo! Hai selezionato <set name="answ1"><star /></set>
+                    <think><set name="voto"><srai>XADD <get name="voto" /> XS 3</srai></set></think>
+                    <reply>
+                        <text>Prossima domanda</text>
+                        <postback>Domanda 3</postback>
+                    </reply>
+                </li>
+                <li>
+                    Sbagliato! Hai selezionato <set name="answ1"><star /></set>
+                    <think><set name="voto"><srai>XSUB <get name="voto" /> XS 1</srai></set></think>
+                    <reply>
+                    <text>Riprova</text>
+                    <postback>Domanda 2</postback>
+            </reply>
+                </li>
+            </condition>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>Domanda 2 <set>amortensia</set></pattern>
+        <template>
+            <condition name="pozione">
+                <li value="Amortensia">
+                    Bravo! Hai selezionato <set name="answ1"><star /></set>
+                    <think><set name="voto"><srai>XADD <get name="voto" /> XS 3</srai></set></think>
+                    <reply>
+                        <text>Prossima domanda</text>
+                        <postback>Domanda 3</postback>
+                    </reply>
+                </li>
+                <li>
+                    Sbagliato! Hai selezionato <set name="answ1"><star /></set>
+                    <think><set name="voto"><srai>XSUB <get name="voto" /> XS 1</srai></set></think>
+                    <reply>
+                    <text>Riprova</text>
+                    <postback>Domanda 2</postback>
+            </reply> 
+                </li>
+            </condition>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>Domanda 2 *</pattern>
+        <template>
+            Sbagliato! Hai selezionato <set name="answ1"><star /></set>
+            <think><set name="voto"><srai>XSUB <get name="voto" /> XS 1</srai></set></think>
+            <reply>
+                <text>Riprova</text>
+                <postback>Domanda 2</postback>
+            </reply>
+        </template>
+    </category>
+
 </aiml>
