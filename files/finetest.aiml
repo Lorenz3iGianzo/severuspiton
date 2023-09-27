@@ -4,6 +4,8 @@
 	    <pattern>Test finito</pattern>
 	    <template>
 	        Complimenti hai completato il test!
+	        <think><set name="errori"><srai>XDIV <get name="errori" /> XS 2</srai></set></think>
+	        <think><set name="voto"><srai>XADD <get name="voto" /> XS <get name="errori" /></srai></set></think>
 	        <br/>Hai ottenuto un punteggio di <get name="voto" />/10
 	    </template>
 	</category>
