@@ -36,22 +36,22 @@
             Di cosa avresti bisogno se ti chiedessi di farmi una pozione   
             <random>
                 <li> <set name="pozione">Polisucco</set></li>
-                <!--li> <set name="pozione">Felix Felicis</set></li>
-                <li> <set name="pozione">Veritaserum</set></li-->
+                <li> <set name="pozione">Felix Felicis</set></li>
+                <li> <set name="pozione">Veritaserum</set></li>
             </random>
             ?
             <br/>
             <reply>
                 <text>
                     <set name="ingr11"><random>
-                        <li>foglie di Platano Picchiatore</li>
+                        <li>Foglie di Platano Picchiatore</li>
                         <li>Uova di Ashwinder</li>
                         <li>Bulbi di Squill</li>
                         <li>Appendici di Purvincolo</li>
                         <li>Gusci di uovo di Occamy</li>
-                        <li>petali di Coclearia</li>
+                        <li>Petali di Coclearia</li>
                         <li>Occhio di tigre</li>
-                        <li>gocce di Tintura di Timo</li>
+                        <li>Gocce di Tintura di Timo</li>
                     </random></set>
                 </text>
                 <postback>Domanda 1 <get name="ingr11" /></postback>
@@ -99,7 +99,7 @@
         <pattern>Domanda 1 <set>polisucco</set></pattern>
         <template>
             <condition name="pozione">
-                <li value="polisucco">
+                <li value="Polisucco">
                     Bravo! Hai selezionato <set name="answ1"><star /></set>
                     <think><set name="voto"><srai>XADD <get name="voto" /> XS 3</srai></set></think>
                     <reply>
@@ -112,19 +112,19 @@
                     Sbagliato! Hai selezionato <set name="answ1"><star /></set>
                     <think><set name="voto"><srai>XSUB <get name="voto" /> XS 1</srai></set></think>
                     <reply>
-                    <text>Riprova</text>
-                    <postback>Domanda 1</postback>
-            </reply>
+                        <text>Riprova</text>
+                        <postback>Domanda 1</postback>
+                    </reply> 
                 </li>
             </condition>
         </template>
     </category>
     
-        <category>
+    <category>
         <pattern>Domanda 1 <set>felixfelicis</set></pattern>
         <template>
             <condition name="pozione">
-                <li value="felixfelicis">
+                <li value="Felix Felicis">
                     Bravo! Hai selezionato <set name="answ1"><star /></set>
                     <think><set name="voto"><srai>XADD <get name="voto" /> XS 3</srai></set></think>
                     <reply>
@@ -136,19 +136,19 @@
                     Sbagliato! Hai selezionato <set name="answ1"><star /></set>
                     <think><set name="voto"><srai>XSUB <get name="voto" /> XS 1</srai></set></think>
                     <reply>
-                    <text>Riprova</text>
-                    <postback>Domanda 1</postback>
-            </reply>
+                        <text>Riprova</text>
+                        <postback>Domanda 1</postback>
+                    </reply> 
                 </li>
             </condition>
         </template>
     </category>
     
-        <category>
+    <category>
         <pattern>Domanda 1 <set>veritaserum</set></pattern>
         <template>
             <condition name="pozione">
-                <li value="veritaserum">
+                <li value="Veritaserum">
                     Bravo! Hai selezionato <set name="answ1"><star /></set>
                     <think><set name="voto"><srai>XADD <get name="voto" /> XS 3</srai></set></think>
                     <reply>
@@ -160,9 +160,9 @@
                     Sbagliato! Hai selezionato <set name="answ1"><star /></set>
                     <think><set name="voto"><srai>XSUB <get name="voto" /> XS 1</srai></set></think>
                     <reply>
-                    <text>Riprova</text>
-                    <postback>Domanda 1</postback>
-            </reply> 
+                        <text>Riprova</text>
+                        <postback>Domanda 1</postback>
+                    </reply> 
                 </li>
             </condition>
         </template>
@@ -178,10 +178,6 @@
                 <postback>Domanda 1</postback>
             </reply>
         </template>
-    </category>
-    
-    <category>
-        <pattern>XADD </pattern>
     </category>
 
 </aiml>
