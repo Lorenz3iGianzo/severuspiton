@@ -85,8 +85,14 @@
                 <postback>Domanda 1 <get name="ingr13" /></postback>
             </reply>
             <reply>
-                <text>Erba</text>
-                <postback>Domanda 1 Erba</postback>
+                <text>
+                    <set name="ingr14"><random>
+                        <li>matita</li>
+                        <li>astuccio</li>
+                        <li>sedia</li>
+                    </random></set>
+                </text>
+                <postback>Domanda 1 <get name="ingr14" /></postback>
             </reply>
         </template>
     </category>
@@ -96,6 +102,38 @@
         <template>
             <condition name="pozione">
                 <li value="polisucco">
+                    Bravo! Hai selezionato <set name="answ1"><star /></set>
+                    <reply>
+                        <text>Prossima domanda</text>
+                        <postback>Domanda 2</postback>
+                    </reply>
+                </li>
+                <li></li>
+            </condition>
+        </template>
+    </category>
+    
+        <category>
+        <pattern>Domanda 1 <set>felixfelicis</set></pattern>
+        <template>
+            <condition name="pozione">
+                <li value="felixfelicis">
+                    Bravo! Hai selezionato <set name="answ1"><star /></set>
+                    <reply>
+                        <text>Prossima domanda</text>
+                        <postback>Domanda 2</postback>
+                    </reply>
+                </li>
+                <li></li>
+            </condition>
+        </template>
+    </category>
+    
+        <category>
+        <pattern>Domanda 1 <set>veritaserum</set></pattern>
+        <template>
+            <condition name="pozione">
+                <li value="veritaserum">
                     Bravo! Hai selezionato <set name="answ1"><star /></set>
                     <reply>
                         <text>Prossima domanda</text>
