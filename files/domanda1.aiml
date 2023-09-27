@@ -1,4 +1,182 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml version="2.0">
-	<!-- insert your AIML categories here -->
+	<category>
+        <pattern>Questo è il mio anno</pattern>
+        <template>Il tuo supervisore ti starà cercando, come ti chiami?</template>
+    </category>
+	    
+	<category>
+        <pattern>*</pattern>
+        <that>Il tuo supervisore ti starà cercando, come ti chiami</that>
+        <template>
+            <sentence>
+                Ah <set name="nomemago"><star /></set>!
+            </sentence>
+            <delay>1</delay>
+            giusto giusto
+            <delay>1</delay>
+            Ieri non ti ho visto molto attento a lezione! 
+            <br/>Vediamo un po' cosa hai imparato...
+            <br/>Sei pronto?
+            <reply>
+                <text>Certo!!</text>
+                <think><set name="voto">1</set></think>
+                <postback>Domanda 1</postback>
+            </reply>
+            <reply>
+                <text>Usa Polvere Buiopesto Peruviana e scappa!!</text>
+                <postback>Esci</postback>
+            </reply>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>Domanda 1</pattern>
+        <template>
+            Di cosa avresti bisogno se ti chiedessi di farmi una pozione   
+            <random>
+                <li> <set name="pozione">Polisucco</set></li>
+                <li> <set name="pozione">Felix Felicis</set></li>
+                <li> <set name="pozione">Veritaserum</set></li>
+            </random>
+            ?
+            <br/>
+            <reply>
+                <text>
+                    <set name="ingr11"><random>
+                        <li>7 foglie di Platano Picchiatore</li>
+                        <li>4 Uova di Ashwinder</li>
+                        <li>2 Bulbi di Squill</li>
+                        <li>3 Appendici di Purvincolo</li>
+                        <li>4 Gusci d'uovo di Occamy</li>
+                        <li>8 petali di Coclearia</li>
+                        <li>1 Occhio di tigre</li>
+                        <li>30 gocce di Tintura di Timo</li>
+                    </random></set>
+                </text>
+                <postback>Domanda 1 <get name="ingr11" /></postback>
+            </reply>
+            <reply>
+                <text>
+                    <set name="ingr12"><random>
+                        <li>Erba Fondente</li>
+                        <li>Corna di Bicorno</li>
+                        <li>Centinodia</li>
+                        <li>Mosche Crisopa</li>
+                        <li>Sanguisughe</li>
+                        <li>Pelle di Girilacco</li>
+                    </random></set>
+                </text>
+                <postback>Domanda 1 <get name="ingr12" /></postback>
+            </reply>
+            <reply>
+                <text>
+                    <set name="ingr13"><random>
+                        <li>Sciroppo di elleboro</li>
+                        <li>Sangue di salamandra</li>
+                        <li>Mandragola</li>
+                        <li>Zanne di serpente</li>
+                        <li>Asfodelo</li>
+                        <li>Artemisio</li>
+                    </random></set>
+                </text>
+                <postback>Domanda 1 <get name="ingr13" /></postback>
+            </reply>
+            <reply>
+                <text>
+                    <set name="ingr14"><random>
+                        <li>matita</li>
+                        <li>astuccio</li>
+                        <li>sedia</li>
+                    </random></set>
+                </text>
+                <postback>Domanda 1 <get name="ingr14" /></postback>
+            </reply>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>Domanda 1 <set>polisucco</set></pattern>
+        <template>
+            <condition name="pozione">
+                <li value="polisucco">
+                    Bravo! Hai selezionato <set name="answ1"><star /></set>
+                    <think>XADD <get name="voto" /> XS 3</think>
+                    <reply>
+                        <text>Prossima domanda</text>
+                        <postback>Domanda 2</postback>
+                    </reply>
+                </li>
+                <li>
+                    Sbagliato! Hai selezionato <set name="answ1"><star /></set>
+                    <think>XSUB <get name="voto" /> XS 1</think>
+                    <reply>
+                    <text>Riprova</text>
+                    <postback>Domanda 1</postback>
+            </reply>
+                </li>
+            </condition>
+        </template>
+    </category>
+    
+        <category>
+        <pattern>Domanda 1 <set>felixfelicis</set></pattern>
+        <template>
+            <condition name="pozione">
+                <li value="felixfelicis">
+                    Bravo! Hai selezionato <set name="answ1"><star /></set>
+                    <think>XADD <get name="voto" /> XS 3</think>
+                    <reply>
+                        <text>Prossima domanda</text>
+                        <postback>Domanda 2</postback>
+                    </reply>
+                </li>
+                <li>
+                    Sbagliato! Hai selezionato <set name="answ1"><star /></set>
+                    <think>XSUB <get name="voto" /> XS 1</think>
+                    <reply>
+                    <text>Riprova</text>
+                    <postback>Domanda 1</postback>
+            </reply>
+                </li>
+            </condition>
+        </template>
+    </category>
+    
+        <category>
+        <pattern>Domanda 1 <set>veritaserum</set></pattern>
+        <template>
+            <condition name="pozione">
+                <li value="veritaserum">
+                    Bravo! Hai selezionato <set name="answ1"><star /></set>
+                    <think>XADD <get name="voto" /> XS 3</think>
+                    <reply>
+                        <text>Prossima domanda</text>
+                        <postback>Domanda 2</postback>
+                    </reply>
+                </li>
+                <li>
+                    Sbagliato! Hai selezionato <set name="answ1"><star /></set>
+                    <think>XSUB <get name="voto" /> XS 1</think>
+                    <reply>
+                    <text>Riprova</text>
+                    <postback>Domanda 1</postback>
+            </reply> 
+                </li>
+            </condition>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>Domanda 1 *</pattern>
+        <template>
+            Sbagliato! Hai selezionato <set name="answ1"><star /></set>
+            <think>XSUB <get name="voto" /> XS 1</think>
+            <reply>
+                <text>Riprova</text>
+                <postback>Domanda 1</postback>
+            </reply>
+        </template>
+    </category>
+
 </aiml>
