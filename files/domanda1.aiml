@@ -36,8 +36,8 @@
             Di cosa avresti bisogno se ti chiedessi di farmi una pozione   
             <random>
                 <li> <set name="pozione">Polisucco</set></li>
-                <li> <set name="pozione">Felix Felicis</set></li>
-                <li> <set name="pozione">Veritaserum</set></li>
+                <!--li> <set name="pozione">Felix Felicis</set></li>
+                <li> <set name="pozione">Veritaserum</set></li-->
             </random>
             ?
             <br/>
@@ -101,15 +101,16 @@
             <condition name="pozione">
                 <li value="polisucco">
                     Bravo! Hai selezionato <set name="answ1"><star /></set>
-                    <think><set name="voto">XADD <get name="voto" /> XS 3</set></think>
+                    <think><set name="voto"><srai>XADD <get name="voto" /> XS 3</srai></set></think>
                     <reply>
+
                         <text>Prossima domanda</text>
                         <postback>Domanda 2</postback>
                     </reply>
                 </li>
                 <li>
                     Sbagliato! Hai selezionato <set name="answ1"><star /></set>
-                    <think>XSUB <get name="voto" /> XS 1</think>
+                    <think><set name="voto"><srai>XSUB <get name="voto" /> XS 1</srai></set></think>
                     <reply>
                     <text>Riprova</text>
                     <postback>Domanda 1</postback>
@@ -125,7 +126,7 @@
             <condition name="pozione">
                 <li value="felixfelicis">
                     Bravo! Hai selezionato <set name="answ1"><star /></set>
-                    <think><set name="voto">XADD <get name="voto" /> XS 3</set></think>
+                    <think><set name="voto"><srai>XADD <get name="voto" /> XS 3</srai></set></think>
                     <reply>
                         <text>Prossima domanda</text>
                         <postback>Domanda 2</postback>
@@ -133,7 +134,7 @@
                 </li>
                 <li>
                     Sbagliato! Hai selezionato <set name="answ1"><star /></set>
-                    <think>XSUB <get name="voto" /> XS 1</think>
+                    <think><set name="voto"><srai>XSUB <get name="voto" /> XS 1</srai></set></think>
                     <reply>
                     <text>Riprova</text>
                     <postback>Domanda 1</postback>
@@ -149,7 +150,7 @@
             <condition name="pozione">
                 <li value="veritaserum">
                     Bravo! Hai selezionato <set name="answ1"><star /></set>
-                    <think><set name="voto">XADD <get name="voto" /> XS 3</set></think>
+                    <think><set name="voto"><srai>XADD <get name="voto" /> XS 3</srai></set></think>
                     <reply>
                         <text>Prossima domanda</text>
                         <postback>Domanda 2</postback>
@@ -157,7 +158,7 @@
                 </li>
                 <li>
                     Sbagliato! Hai selezionato <set name="answ1"><star /></set>
-                    <think>XSUB <get name="voto" /> XS 1</think>
+                    <think><set name="voto"><srai>XSUB <get name="voto" /> XS 1</srai></set></think>
                     <reply>
                     <text>Riprova</text>
                     <postback>Domanda 1</postback>
@@ -171,12 +172,16 @@
         <pattern>Domanda 1 *</pattern>
         <template>
             Sbagliato! Hai selezionato <set name="answ1"><star /></set>
-            <think>XSUB <get name="voto" /> XS 1</think>
+            <think><set name="voto"><srai>XSUB <get name="voto" /> XS 1</srai></set></think>
             <reply>
                 <text>Riprova</text>
                 <postback>Domanda 1</postback>
             </reply>
         </template>
+    </category>
+    
+    <category>
+        <pattern>XADD </pattern>
     </category>
 
 </aiml>
