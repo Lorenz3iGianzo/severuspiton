@@ -44,14 +44,14 @@
             <reply>
                 <text>
                     <set name="ingr11"><random>
-                        <li>7 foglie di Platano Picchiatore</li>
-                        <li>4 Uova di Ashwinder</li>
-                        <li>2 Bulbi di Squill</li>
-                        <li>3 Appendici di Purvincolo</li>
-                        <li>4 Gusci d'uovo di Occamy</li>
-                        <li>8 petali di Coclearia</li>
-                        <li>1 Occhio di tigre</li>
-                        <li>30 gocce di Tintura di Timo</li>
+                        <li>foglie di Platano Picchiatore</li>
+                        <li>Uova di Ashwinder</li>
+                        <li>Bulbi di Squill</li>
+                        <li>Appendici di Purvincolo</li>
+                        <li>Gusci di uovo di Occamy</li>
+                        <li>petali di Coclearia</li>
+                        <li>Occhio di tigre</li>
+                        <li>gocce di Tintura di Timo</li>
                     </random></set>
                 </text>
                 <postback>Domanda 1 <get name="ingr11" /></postback>
@@ -63,7 +63,7 @@
                         <li>Corna di Bicorno</li>
                         <li>Centinodia</li>
                         <li>Mosche Crisopa</li>
-                        <li>Sanguisughe</li>
+                        <li>Sanguisuga</li>
                         <li>Pelle di Girilacco</li>
                     </random></set>
                 </text>
@@ -101,7 +101,7 @@
             <condition name="pozione">
                 <li value="polisucco">
                     Bravo! Hai selezionato <set name="answ1"><star /></set>
-                    <think>XADD <get name="voto" /> XS 3</think>
+                    <think><set name="voto">XADD <get name="voto" /> XS 3</set></think>
                     <reply>
                         <text>Prossima domanda</text>
                         <postback>Domanda 2</postback>
@@ -125,7 +125,7 @@
             <condition name="pozione">
                 <li value="felixfelicis">
                     Bravo! Hai selezionato <set name="answ1"><star /></set>
-                    <think>XADD <get name="voto" /> XS 3</think>
+                    <think><set name="voto">XADD <get name="voto" /> XS 3</set></think>
                     <reply>
                         <text>Prossima domanda</text>
                         <postback>Domanda 2</postback>
@@ -149,7 +149,7 @@
             <condition name="pozione">
                 <li value="veritaserum">
                     Bravo! Hai selezionato <set name="answ1"><star /></set>
-                    <think>XADD <get name="voto" /> XS 3</think>
+                    <think><set name="voto">XADD <get name="voto" /> XS 3</set></think>
                     <reply>
                         <text>Prossima domanda</text>
                         <postback>Domanda 2</postback>
