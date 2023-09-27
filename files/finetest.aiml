@@ -5,7 +5,7 @@
 	    <template>
 	        Complimenti hai completato il test!
 	        <think><set name="errori"><srai>XDIV <get name="errori" /> XS 20</srai></set></think>
-	        <think><set name="voto"><srai>XADD <get name="voto" /> XS <get name="errori" /></srai></set></think>
+	        <think><set name="voto"><srai>XSUB <get name="voto" /> XS <get name="errori" /></srai></set></think>
 	        <br/>Hai ottenuto un punteggio di <get name="voto" />/100
 	    </template>
 	</category>

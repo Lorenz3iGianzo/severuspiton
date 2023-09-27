@@ -71,12 +71,12 @@
                     <reply>
 
                         <text>Prossima domanda</text>
-                        <postback>Domanda 3</postback>
+                        <postback>Test finito</postback>
                     </reply>
                 </li>
                 <li>
                     Sbagliato! Hai selezionato <set name="answ1"><star /></set>
-                    <think><set name="voto"><srai>XSUB <get name="voto" /> XS 1</srai></set></think>
+                    <think><set name="voto"><srai>XSUB <get name="voto" /> XS 10</srai></set></think>
                     <reply>
                     <text>Riprova</text>
                     <postback>Domanda 2</postback>
@@ -95,7 +95,7 @@
                     <think><set name="voto"><srai>XADD <get name="voto" /> XS 30</srai></set></think>
                     <reply>
                         <text>Prossima domanda</text>
-                        <postback>Domanda 3</postback>
+                        <postback>Test finito</postback>
                     </reply>
                 </li>
                 <li>
@@ -119,7 +119,7 @@
                     <think><set name="voto"><srai>XADD <get name="voto" /> XS 30</srai></set></think>
                     <reply>
                         <text>Prossima domanda</text>
-                        <postback>Domanda 3</postback>
+                        <postback>Test finito</postback>
                     </reply>
                 </li>
                 <li>

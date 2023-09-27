@@ -96,7 +96,7 @@
                     <reply>
 
                         <text>Prossima domanda</text>
-                        <postback>Test finito</postback>
+                        <postback>Domanda 2</postback>
                     </reply>
                 </li>
                 <li>
@@ -120,7 +120,7 @@
                     <think><set name="voto"><srai>XADD <get name="voto" /> XS 30</srai></set></think>
                     <reply>
                         <text>Prossima domanda</text>
-                        <postback>Test finito</postback>
+                        <postback>Domanda 2</postback>
                     </reply>
                 </li>
                 <li>
@@ -144,7 +144,7 @@
                     <think><set name="voto"><srai>XADD <get name="voto" /> XS 30</srai></set></think>
                     <reply>
                         <text>Prossima domanda</text>
-                        <postback>Test finito</postback>
+                        <postback>Domanda 2</postback>
                     </reply>
                 </li>
                 <li>
