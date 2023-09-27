@@ -71,8 +71,18 @@
                 <postback>Domanda 1 <get name="ingr12" /></postback>
             </reply>
             <reply>
-                <text>Chiave</text>
-                <postback>Domanda 1 Chiave</postback>
+                <text>
+                    <set name="ingr13"><random>
+                        <li>Sciroppo di elleboro</li>
+                        <li>Sangue di salamandra</li>
+                        <li>Mandragola</li>
+                        <li>Mosche Crisopa</li>
+                        <li>Zanne di serpente</li>
+                        <li>Asfodelo</li>
+                        <li>Artemisio</li>
+                    </random></set>
+                </text>
+                <postback>Domanda 1 <get name="ingr13" /></postback>
             </reply>
             <reply>
                 <text>Erba</text>
