@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+    <category>
+        <pattern><set>inizio</set></pattern>
+        <template>Saluti babbano!
+        <delay>2</delay>
+        Non dovresti essere in queste aree del castello!
+        <delay>2</delay>
+        Di che casata sei?
+        <reply>
+            <text>Grifondoro</text>
+            <postback>Ho scelto Grifondoro</postback>
+        </reply>
+        <reply>
+            <text>Serpeverde</text>
+            <postback>Ho scelto Serpeverde</postback>
+        </reply>
+        <reply>
+            <text>Tassorosso</text>
+            <postback>Ho scelto Tassorosso</postback>
+        </reply>
+        <reply>
+            <text>Corvonero</text>
+            <postback>Ho scelto Corvonero</postback>
+        </reply>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>Ho scelto *</pattern>
+        <template>Ah un <set name="casata"><star /></set>!
+        <delay>1</delay>
+        Che anno sei?
+        <reply>
+            <text>I anno</text>
+            <postback>Questo è il mio anno</postback>
+        </reply>
+        <reply>
+            <text>II anno</text>
+            <postback>Questo è il mio anno</postback>
+        </reply>
+        <reply>
+            <text>III anno</text>
+            <postback>Questo è il mio anno</postback>
+        </reply>
+        <reply>
+            <text>IV anno</text>
+            <postback>Questo è il mio anno</postback>
+        </reply>
+        <reply>
+            <text>V anno</text>
+            <postback>Questo è il mio anno</postback>
+        </reply>
+        <reply>
+            <text>VI anno</text>
+            <postback>Questo è il mio anno</postback>
+        </reply>
+        <reply>
+            <text>VII anno</text>
+            <postback>Questo è il mio anno</postback>
+        </reply>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>Questo è il mio anno</pattern>
+        <template>Il tuo supervisore ti stara cercando, come ti chiami?</template>
+    </category>
+</aiml>
