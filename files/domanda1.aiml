@@ -21,6 +21,7 @@
             <reply>
                 <text>Certo!!</text>
                 <think><set name="voto">1</set></think>
+                <think><set name="errori">0</set></think>
                 <postback>Domanda 1</postback>
             </reply>
             <reply>
@@ -82,16 +83,6 @@
                 </text>
                 <postback>Domanda 1 <get name="ingr13" /></postback>
             </reply>
-            <reply>
-                <text>
-                    <set name="ingr14"><random>
-                        <li>matita</li>
-                        <li>astuccio</li>
-                        <li>sedia</li>
-                    </random></set>
-                </text>
-                <postback>Domanda 1 <get name="ingr14" /></postback>
-            </reply>
         </template>
     </category>
     
@@ -110,7 +101,7 @@
                 </li>
                 <li>
                     Sbagliato! Hai selezionato <set name="answ1"><star /></set>
-                    <think><set name="voto"><srai>XSUB <get name="voto" /> XS 1</srai></set></think>
+                    <think><set name="errori"><srai>XADD <get name="errori" /> XS 1</srai></set></think>
                     <reply>
                         <text>Riprova</text>
                         <postback>Domanda 1</postback>
@@ -134,7 +125,7 @@
                 </li>
                 <li>
                     Sbagliato! Hai selezionato <set name="answ1"><star /></set>
-                    <think><set name="voto"><srai>XSUB <get name="voto" /> XS 1</srai></set></think>
+                    <think><set name="errori"><srai>XADD <get name="errori" /> XS 1</srai></set></think>
                     <reply>
                         <text>Riprova</text>
                         <postback>Domanda 1</postback>
@@ -158,7 +149,7 @@
                 </li>
                 <li>
                     Sbagliato! Hai selezionato <set name="answ1"><star /></set>
-                    <think><set name="voto"><srai>XSUB <get name="voto" /> XS 1</srai></set></think>
+                    <think><set name="errori"><srai>XADD <get name="errori" /> XS 1</srai></set></think>
                     <reply>
                         <text>Riprova</text>
                         <postback>Domanda 1</postback>
@@ -172,7 +163,7 @@
         <pattern>Domanda 1 *</pattern>
         <template>
             Sbagliato! Hai selezionato <set name="answ1"><star /></set>
-            <think><set name="voto"><srai>XSUB <get name="voto" /> XS 1</srai></set></think>
+            <think><set name="errori"><srai>XADD <get name="errori" /> XS 1</srai></set></think>
             <reply>
                 <text>Riprova</text>
                 <postback>Domanda 1</postback>
