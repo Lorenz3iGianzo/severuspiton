@@ -1,4 +1,147 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml version="2.0">
-	<!-- insert your AIML categories here -->
+	<category>
+        <pattern>Domanda 3</pattern>
+        <template>
+            Ok dai, ultima domanda...
+            Dimmi gli ingredienti della pozione   
+            <random>
+                <li> <set name="pozione">Seconda possibilità</set></li>
+                <li> <set name="pozione">Rivedipensieri</set></li>
+                <li> <set name="pozione">Inivisibilità</set></li>
+            </random>
+            !
+            <br/>
+            <reply>
+                <text>
+                    <set name="ingr31">
+                        <random>
+                            <li>legno di faggio</li>
+                            <li>3 bucaneve secchi</li>
+                            <li>1 oggetto che la persona a cui si domanda una seconda possibilità ha gettato via</li>
+                            <li>1 oggetto combustibile a cui si tiene particolarmente</li>
+                            <li>1 foglio di pergamena ed inchiostro nero non incantato</li>
+                        </random>
+                    </set>
+                </text>
+                <postback>Domanda 3 <get name="ingr31" /></postback>
+            </reply>
+            <reply>
+                <text>
+                    <set name="ingr32">
+                        <random>
+                            <li>2 litri d`acqua</li>
+                            <li>100 gr di cervello di rana</li>
+                            <li>200 gr di pelle di Drago</li>
+                            <li>20 gr di cenere di Ashwinder</li>
+                            <li>10 gr di Occhi di scarafaggio</li>
+                            <li>5 foglie secche di Belladonna</li>
+                        </random>
+                    </set>
+                </text>
+                <postback>Domanda 3 <get name="ingr32" /></postback>
+            </reply>
+            <reply>
+                <text>
+                    <set name="ingr33">
+                        <random>
+                            <li>Mezzo litro d'acqua per ogni giorno di preparazione</li>
+                            <li>7 cuori di Pipistrello</li>
+                            <li>50 gr di pietra di luna in polvere</li>
+                            <li>50 gr d'erba fondente (che va raccolta con la luna piena)</li>
+                            <li>10 gr di Pelle di Girilacco</li>
+                            <li>1 goccia di sangue di Demiguise</li>
+                        </random>
+                    </set>
+                </text>
+                <postback>Domanda 3 <get name="ingr33" /></postback>
+            </reply>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>Domanda 3 <set>secondapossibilita</set></pattern>
+        <template>
+            <condition name="pozione">
+                <li value="Seconda possibilità">
+                    Bravo! Hai selezionato <set name="answ3"><star /></set>
+                    <think><set name="voto"><srai>XADD <get name="voto" /> XS 30</srai></set></think>
+                    <reply>
+
+                        <text>Vedi risultato</text>
+                        <postback>Test finito</postback>
+                    </reply>
+                </li>
+                <li>
+                    Sbagliato! Hai selezionato <set name="answ3"><star /></set>
+                    <think><set name="voto"><srai>XSUB <get name="voto" /> XS 5</srai></set></think>
+                    <reply>
+                    <text>Riprova</text>
+                    <postback>Domanda 3</postback>
+            </reply>
+                </li>
+            </condition>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>Domanda 3 <set>rivedipensieri</set></pattern>
+        <template>
+            <condition name="pozione">
+                <li value="Rivedipensieri">
+                    Bravo! Hai selezionato <set name="answ3"><star /></set>
+                    <think><set name="voto"><srai>XADD <get name="voto" /> XS 30</srai></set></think>
+                    <reply>
+                        <text>Vedi risultato</text>
+                        <postback>Test finito</postback>
+                    </reply>
+                </li>
+                <li>
+                    Sbagliato! Hai selezionato <set name="answ3"><star /></set>
+                    <think><set name="errori"><srai>XADD <get name="errori" /> XS 5</srai></set></think>
+                    <reply>
+                    <text>Riprova</text>
+                    <postback>Domanda 3</postback>
+            </reply>
+                </li>
+            </condition>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>Domanda 3 <set>invisibilita</set></pattern>
+        <template>
+            <condition name="pozione">
+                <li value="Invisibilità">
+                    Bravo! Hai selezionato <set name="answ3"><star /></set>
+                    <think><set name="voto"><srai>XADD <get name="voto" /> XS 30</srai></set></think>
+                    <reply>
+                        <text>Vedi risultato</text>
+                        <postback>Test finito</postback>
+                    </reply>
+                </li>
+                <li>
+                    Sbagliato! Hai selezionato <set name="answ3"><star /></set>
+                   <think><set name="errori"><srai>XADD <get name="errori" /> XS 5</srai></set></think>
+                    <reply>
+                    <text>Riprova</text>
+                    <postback>Domanda 3</postback>
+            </reply> 
+                </li>
+            </condition>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>Domanda 3 *</pattern>
+        <template>
+            Sbagliato! Hai selezionato <set name="answ3"><star /></set>
+            <think><set name="errori"><srai>XADD <get name="errori" /> XS 5</srai></set></think>
+            <reply>
+                <text>Riprova</text>
+                <postback>Domanda 3</postback>
+            </reply>
+        </template>
+    </category>
+
 </aiml>

@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml version="2.0">
 	<category>
-	    <patter>*</patter>
+	    <pattern>*</pattern>
 	    <template>Non ho capito</template>
+	</category>
+	<category>
+	    <pattern>endtest</pattern>
+	    <template>Il beta test del chatbot Severuspiton è terminato!</template>
 	</category>
 </aiml>

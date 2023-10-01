@@ -26,7 +26,9 @@
             </reply>
             <reply>
                 <text>Usa Polvere Buiopesto Peruviana e scappa!!</text>
-                <postback>Esci</postback>
+                <think><set name="voto">0</set></think>
+                <think><set name="errori">0</set></think>
+                <postback>endtest</postback>
             </reply>
         </template>
     </category>

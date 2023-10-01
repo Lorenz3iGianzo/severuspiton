@@ -16,12 +16,12 @@
                 <text>
                     <set name="ingr21">
                         <random>
-                            <li>Corno di Bicorno in polvere</li>,
-                            <li>Radici di Tranello del diavolo</li>,
-                            <li>Succo di zucca</li>,
-                            <li>Un capello di Troll</li>,
-                            <li>Un pizzico di pepe rosa e verde</li>,
-                            <li>Gocce di assenzio</li>,
+                            <li>Corno di Bicorno in polvere</li>
+                            <li>Radici di Tranello del diavolo</li>
+                            <li>Succo di zucca</li>
+                            <li>Un capello di Troll</li>
+                            <li>Un pizzico di pepe rosa e verde</li>
+                            <li>Gocce di assenzio</li>
                             <li>Fiore di Loto</li>
                         </random>
                     </set>
@@ -56,7 +56,7 @@
                         </random>
                     </set>
                 </text>
-                <postback>Domanda 2 <get name="ingr2" /></postback>
+                <postback>Domanda 2 <get name="ingr23" /></postback>
             </reply>
         </template>
     </category>
@@ -66,16 +66,16 @@
         <template>
             <condition name="pozione">
                 <li value="Invecchiante">
-                    Bravo! Hai selezionato <set name="answ1"><star /></set>
+                    Bravo! Hai selezionato <set name="answ2"><star /></set>
                     <think><set name="voto"><srai>XADD <get name="voto" /> XS 30</srai></set></think>
                     <reply>
 
                         <text>Prossima domanda</text>
-                        <postback>Test finito</postback>
+                        <postback>Domanda 3</postback>
                     </reply>
                 </li>
                 <li>
-                    Sbagliato! Hai selezionato <set name="answ1"><star /></set>
+                    Sbagliato! Hai selezionato <set name="answ2"><star /></set>
                     <think><set name="voto"><srai>XSUB <get name="voto" /> XS 10</srai></set></think>
                     <reply>
                     <text>Riprova</text>
@@ -91,15 +91,15 @@
         <template>
             <condition name="pozione">
                 <li value="Bella Pelle">
-                    Bravo! Hai selezionato <set name="answ1"><star /></set>
+                    Bravo! Hai selezionato <set name="answ2"><star /></set>
                     <think><set name="voto"><srai>XADD <get name="voto" /> XS 30</srai></set></think>
                     <reply>
                         <text>Prossima domanda</text>
-                        <postback>Test finito</postback>
+                        <postback>Domanda 3</postback>
                     </reply>
                 </li>
                 <li>
-                    Sbagliato! Hai selezionato <set name="answ1"><star /></set>
+                    Sbagliato! Hai selezionato <set name="answ2"><star /></set>
                     <think><set name="errori"><srai>XADD <get name="errori" /> XS 10</srai></set></think>
                     <reply>
                     <text>Riprova</text>
@@ -115,15 +115,15 @@
         <template>
             <condition name="pozione">
                 <li value="Amortensia">
-                    Bravo! Hai selezionato <set name="answ1"><star /></set>
+                    Bravo! Hai selezionato <set name="answ2"><star /></set>
                     <think><set name="voto"><srai>XADD <get name="voto" /> XS 30</srai></set></think>
                     <reply>
                         <text>Prossima domanda</text>
-                        <postback>Test finito</postback>
+                        <postback>Domanda 3</postback>
                     </reply>
                 </li>
                 <li>
-                    Sbagliato! Hai selezionato <set name="answ1"><star /></set>
+                    Sbagliato! Hai selezionato <set name="answ2"><star /></set>
                    <think><set name="errori"><srai>XADD <get name="errori" /> XS 10</srai></set></think>
                     <reply>
                     <text>Riprova</text>
@@ -137,7 +137,7 @@
     <category>
         <pattern>Domanda 2 *</pattern>
         <template>
-            Sbagliato! Hai selezionato <set name="answ1"><star /></set>
+            Sbagliato! Hai selezionato <set name="answ2"><star /></set>
             <think><set name="errori"><srai>XADD <get name="errori" /> XS 10</srai></set></think>
             <reply>
                 <text>Riprova</text>
