@@ -74,7 +74,7 @@
                 </li>
                 <li>
                     Sbagliato! Hai selezionato <set name="answ3"><star /></set>
-                    <think><set name="voto"><srai>XSUB <get name="voto" /> XS 5</srai></set></think>
+                    <think><set name="voto"><srai>XSUB <get name="voto" /> XS 10</srai></set></think>
                     <reply>
                     <text>Riprova</text>
                     <postback>Domanda 3</postback>
@@ -98,7 +98,7 @@
                 </li>
                 <li>
                     Sbagliato! Hai selezionato <set name="answ3"><star /></set>
-                    <think><set name="errori"><srai>XADD <get name="errori" /> XS 5</srai></set></think>
+                    <think><set name="errori"><srai>XADD <get name="errori" /> XS 10</srai></set></think>
                     <reply>
                     <text>Riprova</text>
                     <postback>Domanda 3</postback>
@@ -122,7 +122,7 @@
                 </li>
                 <li>
                     Sbagliato! Hai selezionato <set name="answ3"><star /></set>
-                   <think><set name="errori"><srai>XADD <get name="errori" /> XS 5</srai></set></think>
+                   <think><set name="errori"><srai>XADD <get name="errori" /> XS 10</srai></set></think>
                     <reply>
                     <text>Riprova</text>
                     <postback>Domanda 3</postback>
@@ -136,7 +136,7 @@
         <pattern>Domanda 3 *</pattern>
         <template>
             Sbagliato! Hai selezionato <set name="answ3"><star /></set>
-            <think><set name="errori"><srai>XADD <get name="errori" /> XS 5</srai></set></think>
+            <think><set name="errori"><srai>XADD <get name="errori" /> XS 10</srai></set></think>
             <reply>
                 <text>Riprova</text>
                 <postback>Domanda 3</postback>
